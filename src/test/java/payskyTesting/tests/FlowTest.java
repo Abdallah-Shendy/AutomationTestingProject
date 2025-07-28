@@ -1,5 +1,10 @@
 package payskyTesting.tests;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Link;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.testng.Tag;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -28,8 +33,11 @@ public class FlowTest {
 
     }
 
-
-    @Test
+    @org.testng.annotations.Test(priority = 1)
+    @Description("Login with valid user")
+    @Link("https://talent500.com/blog/how-to-install-and-use-the-scoop-windows-package-manager/")
+    @Tag("Regression")
+    @Severity(SeverityLevel.CRITICAL)
     public void completeFlowTest() {
         registrationPage.RegisterWithValidUser();
         loginPage.LoginWithValidUser();
