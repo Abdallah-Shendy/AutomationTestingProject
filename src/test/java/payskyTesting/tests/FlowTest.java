@@ -6,6 +6,8 @@ import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.testng.Tag;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import paysky.pages.*;
@@ -53,5 +55,11 @@ public class FlowTest {
         contactPage.fillContactForm();
 
 
+    }
+    @AfterClass
+    public void closeDriver() {
+        if (driver != null) {
+            driver.quit();
+        }
     }
 }
